@@ -22,10 +22,17 @@ let prof2 = new Cl_fijo("Carolina", 40, 90);
 
 let salida = document.getElementById("salida");
 
+let mostrarProfesor = (prof) => {
+    return `
+        <br>Nombre del profesor fijo: ${prof.nombre}
+        <br>Monto del bono: $${prof.bono}
+        <br>Monto del sueldo: $${prof.sueldo}
+        <br>Ingreso total del profesor ${prof.nombre}: $${prof.calcIngresoTotal()}
+    `;
+}
+
 salida.innerHTML += `
-<br>Nombre del profesor fijo: ${prof1.nombre}
-<br>Ingreso total del profesor ${prof1.nombre}: $${prof1.calcIngresoTotal()}
+${mostrarProfesor(prof1)}
 <br>
-<br>Nombre del profesor fijo: ${prof2.nombre}
-<br>Ingreso total del profesor ${prof2.nombre}: $${prof2.calcIngresoTotal()}
+${mostrarProfesor(prof2)}
 `;
